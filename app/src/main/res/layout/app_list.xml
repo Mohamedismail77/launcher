@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ova"
+            android:src="@drawable/ic_action_wifi"
+            android:padding="4dp"
+            android:layout_marginRight="10dp"
+            />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ova"
+            android:src="@drawable/ic_action_lang"
+            android:padding="4dp"
+            android:tintMode="src_atop"
+            android:Tint="#f50"
+            android:layout_marginLEFT="10dp"
+            />
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></SearchView>
+
+    </LinearLayout>
+    
+
+</LinearLayout>
