@@ -4,11 +4,17 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -24,7 +30,7 @@ import java.util.TimeZone;
  * Created by m-ismail on 01/02/18.
  */
 
-public class AppsListActivity extends Activity {
+public class AppsListActivity extends Activity implements View.OnClickListener{
 
     private PackageManager manager;
     private List<AppDetail> apps;
@@ -38,10 +44,67 @@ public class AppsListActivity extends Activity {
         //loadApps();
         //loadListView();
         //addClickListener();
+        ImageButton lan = findViewById(R.id.lan);
+        ImageButton wifi = findViewById(R.id.wifi);
+        ImageButton chrome = findViewById(R.id.chrome);
+        ImageButton showBox = findViewById(R.id.showBox);
+        ImageButton oneTv = findViewById(R.id.oneTv);
+        ImageButton youTube = findViewById(R.id.youtube);
+        lan.setOnClickListener(this);
+        wifi.setOnClickListener(this);
+        chrome.setOnClickListener(this);
+        showBox.setOnClickListener(this);
+        oneTv.setOnClickListener(this);
+        youTube.setOnClickListener(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 
 
-//    private void loadApps(){
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()){
+            case R.id.lan:
+                intent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+                startActivity(intent);
+                break;
+            case R.id.wifi:
+                intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
+                startActivity(intent);
+                break;
+
+            case R.id.chrome:
+                manager = getPackageManager();
+                intent = manager.getLaunchIntentForPackage("com.android.chrome");
+                AppsListActivity.this.startActivity(intent);
+                break;
+            case R.id.showBox:
+                manager = getPackageManager();
+                intent = manager.getLaunchIntentForPackage("app.movie.shows.latestmovies.xfrj");
+                AppsListActivity.this.startActivity(intent);
+                break;
+            case R.id.youtube:
+                manager = getPackageManager();
+                intent = manager.getLaunchIntentForPackage("com.google.android.youtube.tv");
+                AppsListActivity.this.startActivity(intent);
+                break;
+            case R.id.oneTv:
+                manager = getPackageManager();
+                intent = manager.getLaunchIntentForPackage("com.sourcya.mware.io.androidApp");
+                AppsListActivity.this.startActivity(intent);
+                break;
+        }
+
+
+    }
+
+
+
+    //    private void loadApps(){
 //        manager = getPackageManager();
 //        apps = new ArrayList<AppDetail>();
 //

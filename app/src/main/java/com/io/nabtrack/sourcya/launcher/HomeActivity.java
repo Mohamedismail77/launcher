@@ -43,4 +43,11 @@ public class HomeActivity extends Activity {
     public void onBackPressed() {
         
     }
+
+    @Override
+    protected void onResume() {
+        startActivity(new Intent(HomeActivity.this, AppsListActivity.class));
+        super.onResume();
+
+    }
 }

@@ -17,20 +17,18 @@
         android:id="@+id/head">
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ova"
-            android:src="@drawable/ic_action_wifi"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/select"
             android:padding="4dp"
             android:layout_marginRight="10dp"
             android:id="@+id/wifi"
             />
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ova"
-            android:src="@drawable/ic_action_lang"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/lan_select"
             android:padding="4dp"
             android:layout_marginLeft="10dp"
             android:id="@+id/lan"
@@ -42,14 +40,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Apps"
+        android:text="@string/apps"
         android:textColor="#fff"
         android:textSize="20sp"
         android:textStyle="bold"
         android:paddingLeft="20dp"
         android:layout_marginTop="10dp"
         android:id="@+id/title"
-        android:layout_below="@id/head"/>
+        android:layout_below="@id/head"
+        android:gravity="left"/>
 
     <GridLayout
         android:id="@+id/GridLayout"
@@ -108,7 +107,7 @@
 
 
         <ImageButton
-            android:id="@+id/button4"
+            android:id="@+id/oneTv"
             android:layout_column="0"
             android:layout_gravity="left|top"
             android:layout_row="2"
