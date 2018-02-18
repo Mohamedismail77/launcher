@@ -3,7 +3,7 @@
 
     <item android:state_active="true"
         android:drawable="@drawable/ova">
-        <
+
     </item>
 
 </selector>
